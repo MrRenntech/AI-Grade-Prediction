@@ -1,0 +1,73 @@
+HOW TO RUN THE STUDENT PERFORMANCE AI PROJECT
+=============================================
+
+PREREQUISITES
+-------------
+1. Python 3.8+ installed.
+2. Ensure you are in the project root directory: `student-performance-ai`
+
+SETUP
+-----
+1. Create a virtual environment (optional but recommended):
+   python -m venv venv
+   .\venv\Scripts\activate   (Windows)
+   source venv/bin/activate  (Mac/Linux)
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+RUNNING THE PIPELINE
+--------------------
+The project consists of three main stages: Data Loading, Training, and Evaluation.
+
+1. TRAIN THE MODEL
+   Run the training script to load data, preprocess it, train the models (Logistic Regression & Random Forest), and save the best one.
+   
+   Command:
+   python src/train_model.py
+
+   Output:
+   - Prints accuracy scores for both models.
+   - Saves the best model to `models/student_risk_model.pkl`.
+
+3. EVALUATE THE MODEL & ANALYZE FEATURES
+   Run the evaluation script to generate detailed metrics, plots, and feature importance.
+
+   Command:
+   python src/evaluate_model.py
+   python src/feature_importance.py
+
+   Output:
+   - Prints Classification Report and Confusion Matrix.
+   - Calculates ROC-AUC score.
+   - Saves the ROC Curve plot to `models/roc_curve.png`.
+   - Saves the Feature Importance plot to `models/feature_importance.png` (showing which factors most affect student risk).
+
+3. RUN THE WEB APP (PREDICTION SYSTEM)
+   Start the Flask web application to use the model via a web interface.
+
+   Command:
+   python app/app.py
+
+   Usage:
+   - Open your browser and go to http://127.0.0.1:5000
+   - Enter student details to get a risk prediction.
+
+FILE STRUCTURE OVERVIEW
+-----------------------
+- src/ : Contains core logic for training and evaluation.
+- app/ : Contains the Flask web application.
+- data/ : Stores the dataset (student-mat.csv).
+- models/ : Stores the trained model (.pkl) and evaluation plots (.png).
+
+4. RUN THE EXECUTABLE (STANDALONE)
+   Run the packaged application without needing Python installed.
+
+   Location:
+   dist/student_risk_predictor.exe
+
+   Usage:
+   - Double-click the executable.
+   - It will start a local server and window (or check console for URL).
+   - Access http://127.0.0.1:5000 in your browser.
+
