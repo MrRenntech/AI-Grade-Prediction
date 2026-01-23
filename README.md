@@ -16,8 +16,9 @@
 ## 🚀 Key Features
 
 *   **📊 Predictive Analytics**: Utilizes **Random Forest** (91% Accuracy) to classify students into Low, Medium, or High risk categories.
+*   **🔮 Academic Forecasting**: Predicts future **SGPA Bands** and projects **CGPA** using deterministic academic logic.
 *   **🧠 Intelligent Scoring**: Generates a precise **Risk Score** and **Confidence Level** for actionable insights.
-*   **🎨 Dynamic Dashboard**: A premium, responsive web interface featuring real-time risk visualization.
+*   **🎨 Professional Interface**: A clean, academic dashboard designed for decision support.
 *   **📦 Portable Deployment**: Fully packaged standalone `.exe` for instant use on any Windows machine.
 *   **📈 Explainable AI**: Visualizes key risk drivers like Study Time, Absences, and Past Class Failures.
 
@@ -31,10 +32,13 @@ graph LR
     FE -->|POST Request| API[Flask API]
     subgraph "Backend Processing"
         API -->|Raw Data| DP[Data Preprocessing]
-        DP -->|Encoded Features| Model[Random Forest Model]
-        Model -->|Probabilities| RS[Risk Scoring Logic]
+        DP -->|Encoded Features| RiskModel[Risk Model]
+        DP -->|Encoded Features| SGPAModel[SGPA Model]
+        RiskModel -->|Probabilities| RS[Risk Scoring Logic]
+        SGPAModel -->|SGPA Band| PL[Projection Logic]
     end
-    RS -->|Risk Level & Score| API
+    RS -->|Risk Level| API
+    PL -->|Projected SGPA/CGPA| API
     API -->|JSON Response| FE
     FE -->|Visual Alert| User
     

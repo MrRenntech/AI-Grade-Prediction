@@ -1,36 +1,22 @@
-PROJECT DIRECTORY TREE
-======================
-
 AI Grade Prediction/
-│
-├── data/
-│   └── student-mat.csv       # Raw dataset containing student performance attributes (395 students)
-│
-├── src/
-│   ├── data_preprocessing.py # Logic for loading data, encoding features, and experimental cleaning
-│   ├── train_model.py        # Script to train Logistic Regression and Random Forest models
-│   ├── evaluate_model.py     # Generates performance metrics (Accuracy, ROC-AUC) and plots
-│   ├── risk_scoring.py       # Defines logic for risk levels (Low, Medium, High) based on probabilities
-│   └── feature_importance.py # Analyzes and plots which features impact the model most
-│
-├── models/
-│   ├── student_risk_model.pkl # The trained and serialized Random Forest model
-│   ├── encoders.pkl           # Saved label encoders for categorical variables to ensure consistency
-│   ├── roc_curve.png          # Visualization of model performance (ROC Curve)
-│   └── feature_importance.png # Bar chart showing top risk factors
-│
-├── app/
-│   ├── app.py                # Flask web server handling API requests and serving the frontend
-│   ├── static/
-│   │   └── style.css         # CSS styles for the web application
-│   └── templates/
-│       └── index.html        # Frontend HTML interface for the risk predictor form
-│
-├── dist/                     
-│   └── student_risk_predictor.exe # Standalone executable for the application
-│
-├── requirements.txt          # List of Python dependencies
-├── HOW_TO_RUN.txt            # Instructions for setting up and running the project pythonically or via exe
-├── DEVELOPMENT_STEPS.txt     # Log of development progress, model accuracy scores, and design decisions
-├── PROJECT_TREE.txt          # This file (file structure with descriptions)
-└── README.md                 # High-level project information
+├── 📁 app/          # Flask application logic
+│   ├── 📁 templates/ # HTML frontend
+│   ├── 📁 static/    # CSS assets
+│   └── 🐍 app.py     # Main application entry point
+├── 📁 assets/       # Project banner and media
+├── 📁 data/         # Student performance datasets
+├── 📁 models/       # Trained Models (Risk & SGPA)
+│   ├── 📄 student_risk_model.pkl
+│   ├── 📄 sgpa_band_model.pkl
+│   └── 📄 sgpa_scaler.pkl
+├── 📁 src/          # Intelligence Layer Scripts
+│   ├── 🐍 train_model.py       # Risk Model Training
+│   ├── 🐍 train_sgpa_model.py  # SGPA Model Training
+│   ├── 🐍 cgpa_projection.py   # CGPA Logic
+│   ├── 🐍 data_preprocessing.py
+│   └── 🐍 sgpa_preprocessing.py
+├── 📁 dist/         # Standalone Executable (Git-ignored but local)
+├── 📄 HOW_TO_RUN.txt      # Guide for users
+├── 📄 DEVELOPMENT_STEPS.txt # Full dev log
+├── 📄 requirements.txt    # Python dependencies
+└── 📄 README.md           # Project Documentation
