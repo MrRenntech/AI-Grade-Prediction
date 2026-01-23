@@ -1,6 +1,22 @@
+# Python
 __pycache__/
 *.pyc
+
+# Virtual environments
 venv/
-.env
+.env/
+
+# Build artifacts
+build/
+dist/
+*.exe
+*.pkg
+
+# ML artifacts
+*.pkl
+*.joblib
+*.h5
+
+# OS files
 .DS_Store
-.vscode/
+Thumbs.db
