@@ -1,7 +1,7 @@
 PROJECT DIRECTORY TREE
 ======================
 
-student-performance-ai/
+AI Grade Prediction/
 │
 ├── data/
 │   └── student-mat.csv       # Raw dataset containing student performance attributes (395 students)

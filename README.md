@@ -1,6 +1,6 @@
 ![Student Performance AI Banner](assets/banner.png)
 
-# 🎓 Student Performance AI
+# 🎓 AI Grade Prediction
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-green?style=for-the-badge&logo=flask&logoColor=white)
@@ -59,7 +59,7 @@ graph LR
 ## 📂 Project Structure
 
 ```bash
-student-performance-ai/
+AI Grade Prediction/
 ├── 📁 app/          # Flask application logic
 │   ├── 📁 templates/ # HTML frontend
 │   └── 📁 static/    # CSS assets
@@ -83,7 +83,7 @@ student-performance-ai/
 ### ⚙️ For Developers
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/MrRenntech/student-performance-ai.git
+    git clone https://github.com/MrRenntech/AI-Grade-Prediction.git
     ```
 2.  **Install dependencies**:
     ```bash
