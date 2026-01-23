@@ -3,150 +3,240 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Student Performance Early Warning System</title>
-
+    <title>Student Performance | Intelligent Forecasting</title>
     <style>
+        /* Audi Design System 
+           Colors: Black (#000000), White (#FFFFFF), Audi Red (#BB0A30), Dark Grey (#4c4c4c), Light Grey (#f2f2f2)
+           Typography: Clean, Sans-serif, Sharp
+           Shapes: Rectangular, No Border Radius
+        */
+
         :root {
-            --primary: #1e3a5f;
-            --secondary: #f4f6f9;
-            --border: #dcdfe4;
-            --text: #2b2e34;
-            --muted: #6b7280;
-
-            --low: #1f7a3f;
-            --medium: #b58900;
-            --high: #a61b1b;
-        }
-
-        * {
-            box-sizing: border-box;
+            --audi-black: #000000;
+            --audi-white: #ffffff;
+            --audi-red: #bb0a30;
+            --audi-dark-grey: #333333;
+            --audi-light-grey: #e5e5e5;
+            --font-stack: "Arial", "Helvetica Neue", sans-serif;
+            /* Fallback for proprietary fonts */
         }
 
         body {
             margin: 0;
-            font-family: "Segoe UI", Roboto, Arial, sans-serif;
-            background: var(--secondary);
-            color: var(--text);
+            padding: 0;
+            font-family: var(--font-stack);
+            background-color: var(--audi-white);
+            color: var(--audi-black);
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* HEADER */
         header {
-            background: var(--primary);
-            color: #ffffff;
-            padding: 22px 40px;
+            background-color: var(--audi-white);
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--audi-light-grey);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-            font-weight: 500;
+        .brand {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            margin-right: 40px;
         }
 
-        header p {
-            margin: 4px 0 0;
-            font-size: 13px;
-            opacity: 0.9;
+        .tagline {
+            font-size: 14px;
+            color: var(--audi-dark-grey);
+            font-weight: 400;
+            margin-left: auto;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
+        /* MAIN LAYOUT */
         .container {
-            max-width: 960px;
-            margin: 35px auto;
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
         }
 
-        .card {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 28px;
+        /* TYPOGRAPHY */
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* FORMS */
+        .form-group {
             margin-bottom: 30px;
         }
 
-        .card h2 {
-            margin-top: 0;
-            font-size: 18px;
-            font-weight: 600;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
-
         label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--muted);
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--audi-dark-grey);
         }
 
         input {
             width: 100%;
-            padding: 9px;
-            margin-top: 6px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 14px;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid var(--audi-dark-grey);
+            background: transparent;
+            font-size: 18px;
+            font-family: var(--font-stack);
+            transition: border-color 0.3s;
+            border-radius: 0;
+            /* Sharp corners */
         }
 
+        input:focus {
+            outline: none;
+            border-bottom: 2px solid var(--audi-black);
+        }
+
+        /* BUTTONS */
         button {
-            margin-top: 26px;
-            padding: 12px;
-            width: 100%;
-            background: var(--primary);
-            color: #ffffff;
+            display: inline-block;
+            background-color: var(--audi-black);
+            color: var(--audi-white);
+            padding: 18px 40px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             border: none;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 500;
             cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.2s, transform 0.1s;
+            border-radius: 0;
+            /* Sharp corners */
+            width: auto;
+            min-width: 200px;
         }
 
         button:hover {
-            background: #162c48;
+            background-color: var(--audi-red);
         }
 
-        .result-card {
-            border-left: 6px solid;
+        button:active {
+            transform: scale(0.98);
         }
 
-        .low {
-            border-color: var(--low);
+        /* RESULTS CARD */
+        .result-panel {
+            background-color: var(--audi-light-grey);
+            padding: 50px;
+            display: none;
+            /* Hidden by default */
+            animation: fadeIn 0.5s ease-out forwards;
         }
 
-        .medium {
-            border-color: var(--medium);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .high {
-            border-color: var(--high);
-        }
-
-        .risk-title {
-            font-size: 20px;
+        .risk-display {
+            font-size: 60px;
             font-weight: 700;
-            margin-bottom: 10px;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
         }
 
-        .meta {
+        .risk-label {
             font-size: 14px;
-            margin: 6px 0;
-        }
-
-        .section-title {
-            margin-top: 18px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--muted);
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            display: inline-block;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--audi-black);
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .metric-item {
+            border-top: 1px solid var(--audi-black);
+            padding-top: 15px;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .metric-name {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--audi-dark-grey);
+            letter-spacing: 0.5px;
+        }
+
+        .recommendation {
+            border-left: 4px solid var(--audi-red);
+            padding-left: 20px;
+        }
+
+        /* UTILS */
+        .text-red {
+            color: var(--audi-red);
+        }
+
+        .text-green {
+            color: #006633;
+        }
+
+        /* Minimalist Green */
+        .text-yellow {
+            color: #cc9900;
         }
 
         footer {
-            text-align: center;
-            padding: 18px;
+            margin-top: 80px;
+            padding: 40px 60px;
+            border-top: 1px solid var(--audi-light-grey);
             font-size: 12px;
-            color: var(--muted);
+            color: var(--audi-dark-grey);
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -154,56 +244,67 @@
 <body>
 
     <header>
-        <h1>AI-Based Student Performance Early Warning System</h1>
-        <p>Decision Support Tool for Academic Advisors and Institutions</p>
+        <div class="brand">Progress.</div>
+        <div class="tagline">Academic Intelligence System</div>
     </header>
 
     <div class="container">
 
-        <div class="card">
-            <h2>Student Academic Profile</h2>
+        <!-- Input Section -->
+        <div class="input-section">
+            <h1>Forecasting<br>Success.</h1>
+            <p style="margin-bottom: 60px; line-height: 1.6; color: var(--audi-dark-grey); max-width: 400px;">
+                Advanced analytics to predict academic trajectory. Enter student metrics to generate a comprehensive
+                risk profile and performance projection.
+            </p>
 
-            <div class="grid">
-                <div>
-                    <label>Student Age</label>
-                    <input type="number" id="age" value="17">
-                </div>
-
-                <div>
-                    <label>Study Time (Scale 1–4)</label>
-                    <input type="number" id="studytime" value="2">
-                </div>
-
-                <div>
-                    <label>Total Absences</label>
-                    <input type="number" id="absences" value="4">
-                </div>
-
-                <div>
-                    <label>Average Internal Assessment Score</label>
-                    <input type="number" id="G1_G2_AVG" value="12">
-                </div>
-
-                <div>
-                    <label>Current CGPA</label>
-                    <input type="number" id="current_cgpa" value="7.4" step="0.01">
-                </div>
-
-                <div>
-                    <label>Completed Semesters</label>
-                    <input type="number" id="completed_semesters" value="3">
-                </div>
+            <div class="form-group">
+                <label>Student Age</label>
+                <input type="number" id="age" value="20">
             </div>
 
-            <button onclick="predict()">Run Risk Assessment</button>
+            <div class="form-group">
+                <label>Study Time (1-4 Scale)</label>
+                <input type="number" id="studytime" value="2">
+            </div>
+
+            <div class="form-group">
+                <label>Absences (Days)</label>
+                <input type="number" id="absences" value="4">
+            </div>
+
+            <div class="form-group">
+                <label>Internal Assessment Avg</label>
+                <input type="number" id="G1_G2_AVG" value="12">
+            </div>
+
+            <div class="form-group">
+                <label>Current CGPA</label>
+                <input type="number" id="current_cgpa" value="7.5" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label>Completed Semesters</label>
+                <input type="number" id="completed_semesters" value="3">
+            </div>
+
+            <button onclick="predict()">Generate Profile</button>
         </div>
 
-        <div id="output"></div>
+        <!-- Output Section -->
+        <div id="output">
+            <!-- Placeholder for layout balance before search -->
+            <div
+                style="height: 100%; display: flex; align-items: center; justify-content: center; background: #f9f9f9; color: #ccc; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">
+                &nbsp;
+            </div>
+        </div>
 
     </div>
 
     <footer>
-        AI-Driven Academic Risk Assessment • Advisory Use Only • Human-in-the-Loop System
+        <div>&copy; 2026 Academic Intelligence</div>
+        <div>Optimized for Brave Browser</div>
     </footer>
 
     <script>
@@ -217,6 +318,13 @@
                 completed_semesters: Number(document.getElementById("completed_semesters").value)
             };
 
+            // Loading State
+            document.getElementById("output").innerHTML = `
+                <div class="result-panel box-shadow" style="display:block; text-align:center; padding-top:100px;">
+                    <div style="font-size:14px; text-transform:uppercase; letter-spacing:2px;">Processing...</div>
+                </div>
+            `;
+
             fetch("/predict", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -225,39 +333,50 @@
                 .then(res => res.json())
                 .then(data => {
                     const p = data.risk_assessment;
-                    let cls = "low";
-                    if (p.risk_level === "HIGH RISK") cls = "high";
-                    else if (p.risk_level === "MEDIUM RISK") cls = "medium";
+                    let riskColorClass = "text-green";
+                    if (p.risk_level === "HIGH RISK") riskColorClass = "text-red";
+                    else if (p.risk_level === "MEDIUM RISK") riskColorClass = "text-yellow";
 
                     document.getElementById("output").innerHTML = `
-            <div class="card result-card ${cls}">
-                <div class="risk-title">${p.risk_level}</div>
+                    <div class="result-panel" style="display:block">
+                        <div class="risk-label">Assessment Complete</div>
+                        <div class="risk-display ${riskColorClass}">${p.risk_level}</div>
+                        
+                        <div class="metric-grid">
+                            <div class="metric-item">
+                                <span class="metric-value">${p.risk_score}</span>
+                                <span class="metric-name">Risk Index</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${p.confidence}</span>
+                                <span class="metric-name">Confidence</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${data.academic_prediction.predicted_sgpa_range}</span>
+                                <span class="metric-name">Est. SGPA</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${data.academic_prediction.projected_cgpa}</span>
+                                <span class="metric-name">Proj. CGPA</span>
+                            </div>
+                        </div>
 
-                <div class="meta"><b>Risk Score:</b> ${p.risk_score}</div>
-                <div class="meta"><b>Confidence:</b> ${p.confidence}</div>
-
-                <div class="section-title">Future Academic Projection</div>
-                <div class="meta">
-                    <b>Expected SGPA (Current Semester):</b>
-                    ${data.academic_prediction.predicted_sgpa_range}
-                </div>
-                <div class="meta">
-                    <b>Projected CGPA (After Semester):</b>
-                    ${data.academic_prediction.projected_cgpa}
-                </div>
-
-                <div class="section-title">Recommended Action</div>
-                <div class="meta">${p.recommended_action}</div>
-            </div>
-        `;
+                        <div class="recommendation">
+                            <div class="metric-name" style="margin-bottom:10px;">Strategic Recommendation</div>
+                            <div style="font-size:18px; line-height:1.4;">${p.recommended_action}</div>
+                        </div>
+                    </div>
+                `;
                 })
                 .catch(() => {
-                    document.getElementById("output").innerHTML =
-                        "<div class='card'>Prediction error. Please verify inputs.</div>";
+                    document.getElementById("output").innerHTML = `
+                    <div class="result-panel" style="display:block; border-left:4px solid var(--audi-red);">
+                        <div style="font-size:18px;">System Communication Error.</div>
+                    </div>
+                `;
                 });
         }
     </script>
-
 </body>
 
 </html>

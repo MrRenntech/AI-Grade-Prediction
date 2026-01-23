@@ -8,8 +8,12 @@
 ![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
-**An intelligent, data-driven system to predict student academic risk using Machine Learning.**  
+**An intelligent, data-driven system to predict student academic risk using Machine Learning.**
 *Empowering educators with early warning signals to improve student success rates.*
+
+![Dashboard Screenshot](/assets/ui_homepage.png)
+
+👉 **[Read the Full Project Report & Whitepaper](docs/summary.md)**
 
 ---
 
@@ -20,7 +24,13 @@
 *   **🧠 Intelligent Scoring**: Generates a precise **Risk Score** and **Confidence Level** for actionable insights.
 *   **🎨 Professional Interface**: A clean, academic dashboard designed for decision support.
 *   **📦 Portable Deployment**: Fully packaged standalone `.exe` for instant use on any Windows machine.
-*   **📈 Explainable AI**: Visualizes key risk drivers like Study Time, Absences, and Past Class Failures.
+
+---
+
+## 📸 Screenshots
+
+### Risk Assessment Results
+![Results Screenshot](/assets/ui_results.png)
 
 ---
 
@@ -41,7 +51,7 @@ graph LR
     PL -->|Projected SGPA/CGPA| API
     API -->|JSON Response| FE
     FE -->|Visual Alert| User
-    
+
     style User fill:#f9f,stroke:#333,stroke-width:2px
     style Model fill:#bbf,stroke:#333,stroke-width:2px
     style RS fill:#dfd,stroke:#333,stroke-width:2px
@@ -49,31 +59,14 @@ graph LR
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Project Documentation
 
-*   **Core**: Python 3.9
-*   **ML Framework**: Scikit-Learn (Random Forest, Logistic Regression)
-*   **Data Structure**: Pandas, NumPy
-*   **Web Framework**: Flask (Jinja2 Templates)
-*   **Frontend**: HTML5, CSS3 (Custom Responsive Design)
-*   **Packaging**: PyInstaller
+We have detailed documentation available in the `docs/` folder:
 
----
-
-## 📂 Project Structure
-
-```bash
-AI Grade Prediction/
-├── 📁 app/          # Flask application logic
-│   ├── 📁 templates/ # HTML frontend
-│   └── 📁 static/    # CSS assets
-├── 📁 assets/       # Project banner and media
-├── 📁 data/         # Student performance datasets
-├── 📁 models/       # Pkl files for Models & Encoders
-├── 📁 src/          # ML scripts (Training, Evaluation)
-├── 📁 dist/         # Standalone Executable (.exe)
-└── 📄 HOW_TO_RUN.txt # Comprehensive usage guide
-```
+*   **[📄 Project Summary](docs/summary.md)**: Detailed whitepaper and system overview.
+*   **[🚀 Development Steps](docs/development_steps.md)**: A step-by-step log of how this project was built.
+*   **[🛠️ How to Run](docs/how_to_run.md)**: Comprehensive guide for developers and users.
+*   **[🌳 Project Tree](docs/project_tree.md)**: File structure visualization.
 
 ---
 
