@@ -1,14 +1,12 @@
-<div align="center">
-  <img src="assets/banner.png" alt="Banner" width="100%" />
-  
-  <br/>
-  
-  ![Python](https://img.shields.io/badge/Python-Dynamic-blue?style=for-the-badge&logo=python&logoColor=white)
-  ![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)
-  ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-</div>
+<p align="center"><img src="assets/github-banner.svg" alt="AI GRADE PREDICTION" width="100%" /></p>
 
-![Student Performance AI Banner](assets/banner.png)
+<h1 align="center">AI GRADE PREDICTION</h1>
+
+<p align="center">A student performance tool that estimates academic risk and grade outcomes from structured data.</p>
+
+<p align="center"><sub>Python · Flask · scikit-learn</sub></p>
+
+---
 
 # 🎓 AI Grade Prediction
 
